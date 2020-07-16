@@ -1,8 +1,39 @@
 # ft_server
 
-Table of content:
+<img src="images/img.jpg" width=80% height=80%>
 
-## 👨🏻‍🏫 Description
+<span>Photo by <a href="https://unsplash.com/@briannjoness?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Brian Jones</a> on <a href="https://unsplash.com/s/photos/docks?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
+
+  # Table of contents:
+<details>
+  <summary>Click to expand</summary>
+
+1. [Description](https://github.com/kukinpower/ft_server#-description)
+2. [Instructions](https://github.com/kukinpower/ft_server#-instructions)
+	1. [Contents](https://github.com/kukinpower/ft_server#-contents)
+	2. [Download and build](https://github.com/kukinpower/ft_server#-download-and-build)
+	3. [Run a conteiner](https://github.com/kukinpower/ft_server#%EF%B8%8F-run-a-container)
+	4. [Autoindex](https://github.com/kukinpower/ft_server#-autoindex)
+3. [Research](https://github.com/kukinpower/ft_server#%EF%B8%8F-research)
+	1. [Docker](https://github.com/kukinpower/ft_server#-docker)
+		1. [Start here](https://github.com/kukinpower/ft_server#-start-here)
+		2. [Virtual Machines vs Containers](https://github.com/kukinpower/ft_server#-virtual-machines-vs-containers)
+	2. [Web-server](https://github.com/kukinpower/ft_server#web-server)
+		1. [Server](https://github.com/kukinpower/ft_server#server)
+		2. [Linux](https://github.com/kukinpower/ft_server#linux)
+		3. [Nginx](https://github.com/kukinpower/ft_server#linux)
+		4. [Mysql](https://github.com/kukinpower/ft_server#linux)
+		5. [Makefile](https://github.com/kukinpower/ft_server#linux)
+		6. [Wordpress](https://github.com/kukinpower/ft_server#linux)
+		7. [SSL](https://github.com/kukinpower/ft_server#linux)
+		8. [Phpmyadmin](https://github.com/kukinpower/ft_server#linux)
+	3. [Useful links to understand containers deeper](https://github.com/kukinpower/ft_server#-useful-links-to-understand-containers-deeper)
+</details>
+
+
+
+
+# 👨🏻‍🏫 Description
 
 `ft_server` is a school 21(42) project.
 
@@ -84,6 +115,8 @@ The second dot `.` is the folder in `docker container filesystem` which defined 
 
 ## Web-server
 
+### 🎩 Server
+
 `server` is a role, that computer takes. Every computer could be a server.
 
 Types of servers are types of services that servers provide.
@@ -140,3 +173,5 @@ Difference between `apt` and `apt-get`:
 * [Demystifying Containers - Part II: Container Runtimes](https://medium.com/@saschagrunert/demystifying-containers-part-ii-container-runtimes-e363aa378f25)
 * [Demystifying Containers - Part III: Container Images](https://medium.com/@saschagrunert/demystifying-containers-part-iii-container-images-244865de6fef)
 * [Docker docs](https://docs.docker.com/)
+
+Author [Roman Kukin](https://github.com/kukinpower/)
