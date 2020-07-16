@@ -1,0 +1,114 @@
+Sending build context to Docker daemon  167.4kB
+Step 1/35 : FROM debian:buster
+ ---> 1b686a95ddbf
+Step 2/35 : WORKDIR /
+ ---> Using cache
+ ---> f8fec6202b6e
+Step 3/35 : RUN apt-get update
+ ---> Using cache
+ ---> 265aadecff13
+Step 4/35 : RUN apt-get -y upgrade
+ ---> Using cache
+ ---> 3f9b57f016b4
+Step 5/35 : RUN apt-get -y install tree vim
+ ---> Using cache
+ ---> 918a66a20327
+Step 6/35 : RUN apt-get -y install nginx
+ ---> Using cache
+ ---> a3be1939060c
+Step 7/35 : RUN apt-get -y install mariadb-server
+ ---> Using cache
+ ---> 5b351ee29218
+Step 8/35 : RUN apt-get -y install php-fpm php-mysql
+ ---> Using cache
+ ---> 4f701ba06bff
+Step 9/35 : RUN apt-get -y install php-curl php-gd php-intl php-mbstring php-soap php-xml php-xmlrpc php-zip
+ ---> Using cache
+ ---> b902b59edf09
+Step 10/35 : RUN apt-get -y install wget
+ ---> Using cache
+ ---> 22ac06c3e605
+Step 11/35 : RUN wget https://wordpress.org/latest.tar.gz
+ ---> Using cache
+ ---> e1f715c616eb
+Step 12/35 : RUN tar -xzvf latest.tar.gz
+ ---> Using cache
+ ---> 6256aae55db9
+Step 13/35 : RUN mkdir var/www/mkristie
+ ---> Using cache
+ ---> 545118cc1704
+Step 14/35 : RUN mv wordpress/ /var/www/mkristie/wordpress
+ ---> Using cache
+ ---> 004b29cb984e
+Step 15/35 : COPY srcs/wp-config.php /var/www/mkristie/wordpress
+ ---> Using cache
+ ---> dce532b3d16e
+Step 16/35 : RUN chown -R www-data:www-data /var/www/mkristie/wordpress
+ ---> Using cache
+ ---> 87138fcb577b
+Step 17/35 : RUN find /var/www/mkristie/wordpress/ -type d -exec chmod 775 {} +
+ ---> Using cache
+ ---> 2155560c2bb7
+Step 18/35 : RUN find /var/www/mkristie/wordpress/ -type f -exec chmod 664 {} +
+ ---> Using cache
+ ---> 71067796798e
+Step 19/35 : RUN chmod 660 /var/www/mkristie/wordpress/wp-config.php
+ ---> Using cache
+ ---> 029a16269c61
+Step 20/35 : RUN wget https://files.phpmyadmin.net/phpMyAdmin/5.0.2/phpMyAdmin-5.0.2-english.tar.gz
+ ---> Using cache
+ ---> 1495c9431446
+Step 21/35 : RUN tar -xzvf phpMyAdmin-5.0.2-english.tar.gz
+ ---> Using cache
+ ---> 889aab4211de
+Step 22/35 : RUN mv phpMyAdmin-5.0.2-english/ /var/www/mkristie/phpmyadmin
+ ---> Using cache
+ ---> a8fffb4868e3
+Step 23/35 : COPY /srcs/config.inc.php /var/www/mkristie/phpmyadmin
+ ---> Using cache
+ ---> 12cfa7caf9da
+Step 24/35 : COPY ./srcs/nginx.conf /etc/nginx/sites-available/mkristie
+ ---> Using cache
+ ---> b3d513405de5
+Step 25/35 : RUN ln -s /etc/nginx/sites-available/mkristie /etc/nginx/sites-enabled/
+ ---> Using cache
+ ---> a93f60172828
+Step 26/35 : RUN mkdir /var/www/mkristie/autoindex
+ ---> Using cache
+ ---> 1c8100682eb5
+Step 27/35 : COPY ./srcs/nginx.conf /var/www/mkristie/autoindex
+ ---> Using cache
+ ---> 651682e07296
+Step 28/35 : COPY ./srcs/nginx_autoindex_off.conf /var/www/mkristie/autoindex
+ ---> Using cache
+ ---> 7f5826d02c5a
+Step 29/35 : COPY ./srcs/autoindex_on.sh .
+ ---> e2f3523187cf
+Step 30/35 : COPY ./srcs/autoindex_off.sh .
+ ---> 8ef9b70ad0af
+Step 31/35 : COPY ./srcs/start_script.sh .
+ ---> 35a450279b29
+Step 32/35 : RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 	-subj "/C=ru/ST=Moscow/L=Moscow/O=no/OU=no/CN=mkristie/" 	-keyout /etc/ssl/private/nginx-selfsigned.key -out /etc/ssl/certs/nginx-selfsigned.crt
+ ---> Running in 1f3ed0e8bc85
+[91mGenerating a RSA private key
+[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m..[0m[91m.[0m[91m..[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m+[0m[91m+[0m[91m+[0m[91m+[0m[91m+
+[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m.[0m[91m+[0m[91m+[0m[91m+[0m[91m+[0m[91m+
+[0m[91mwriting new private key to '/etc/ssl/private/nginx-selfsigned.key'
+[0m[91m-----
+[0mRemoving intermediate container 1f3ed0e8bc85
+ ---> 7017caf6b56a
+Step 33/35 : RUN service mysql start     && mysql -u root 	&& mysql --execute="CREATE DATABASE wp_base; 						GRANT ALL PRIVILEGES ON wp_base.* TO 'root'@'localhost'; 						FLUSH PRIVILEGES; 						UPDATE mysql.user SET plugin = 'mysql_native_password' WHERE user='root';"
+ ---> Running in 0f33509dec5d
+Starting MariaDB database server: mysqld.
+Removing intermediate container 0f33509dec5d
+ ---> 62ba7742767d
+Step 34/35 : EXPOSE 80 443
+ ---> Running in 051bdbadc998
+Removing intermediate container 051bdbadc998
+ ---> 1cb94d2b41d4
+Step 35/35 : CMD bash start_script.sh
+ ---> Running in c67262628511
+Removing intermediate container c67262628511
+ ---> a6b2d2db34d6
+Successfully built a6b2d2db34d6
+Successfully tagged ft_server:latest
