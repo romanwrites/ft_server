@@ -8,7 +8,7 @@ WORKDIR /
 RUN apt-get update
 
 # Upgrade system to get more security and bug fixes
-# The `y` flag assumes "Yes" to all prompts.
+# The `y` flag is for auto "Yes"
 RUN apt-get -y upgrade
 RUN apt-get -y install tree vim
 
