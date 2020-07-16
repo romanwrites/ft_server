@@ -30,9 +30,6 @@
 	3. [Useful links to understand containers deeper](https://github.com/kukinpower/ft_server#-useful-links-to-understand-containers-deeper)
 </details>
 
-
-
-
 # 👨🏻‍🏫 Description
 
 `ft_server` is a school 21(42) project.
@@ -152,11 +149,6 @@ Difference between `apt` and `apt-get`:
 
 `FLUSH PRIVILEGES` reloads grant tables.
 
-### Makefile:
-* [Coloring output info](https://en.wikipedia.org/wiki/ANSI_escape_code#Colors)
-			
-* [RGB Colors](https://www.rapidtables.com/web/color/RGB_Color.html)
-
 ### Wordpress:
 * [how to download](https://wordpress.org/support/article/how-to-install-wordpress/#detailed-instructions)
 * [Wordpress permitions](https://www.smashingmagazine.com/2014/05/proper-wordpress-filesystem-permissions-ownerships/)
@@ -167,6 +159,10 @@ Difference between `apt` and `apt-get`:
 
 ### Phpbyadmin
 * [Install phpMyAdmin with Nginx on Debian 10 Buster](https://kifarunix.com/install-phpmyadmin-with-nginx-on-debian-10-buster/)
+
+### Makefile:
+* [Coloring output info](https://en.wikipedia.org/wiki/ANSI_escape_code#Colors)
+* [RGB Colors](https://www.rapidtables.com/web/color/RGB_Color.html)
 
 ## 🔗 Useful links to understand containers deeper
 * [Demystifying Containers - Part I: Kernel Space](https://medium.com/@saschagrunert/demystifying-containers-part-i-kernel-space-2c53d6979504) by [Sascha Grunert](https://github.com/saschagrunert)
