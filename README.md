@@ -81,6 +81,8 @@ to turn autoindex on `bash ~/autoindex_on.sh`
 
 Or start [Docker Curriculum](https://docker-curriculum.com/) by [Prakhar Srivastav](https://github.com/prakhar1989/)
 
+[The Docker handbook](https://www.freecodecamp.org/news/the-docker-handbook/)
+
 If your internet is slow or you are using mobile internet, use this platform to [play with docker](https://labs.play-with-docker.com/).
 
 After every instruction a new layer is created.
